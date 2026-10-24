@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<title>Nova Hub — Money, News & Inspiration</title>
+<style>
+:root{--bg:#0a1020;--panel:#111b2e;--panel2:#17243a;--line:rgba(255,255,255,.09);--text:#f3f6fc;--muted:#98a8c2;--green:#45e0a1;--red:#ff7188;--blue:#7aa7ff;--gold:#ffc86b;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% -10%,#23365b 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;padding:18px 16px 100px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 22px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,#53e3b0,#7aa7ff);display:grid;place-items:center;color:#081323;font-weight:950;font-size:22px;box-shadow:0 8px 28px #45e0a126}.brand h1{font-size:19px;margin:0;letter-spacing:-.5px}.brand p{margin:3px 0 0;color:var(--muted);font-size:11px}.top-actions{display:flex;gap:8px;align-items:center}.select,.icon-btn{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px}.hero{border:1px solid #ffffff12;border-radius:26px;padding:23px;background:linear-gradient(115deg,#172a43,#17233a 55%,#29264b);position:relative;overflow:hidden;margin-bottom:18px}.hero:after{content:"✦";position:absolute;right:20px;top:4px;font-size:110px;color:#ffffff08}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--green);font-weight:800}.hero h2{font-size:clamp(25px,5vw,38px);line-height:1.13;letter-spacing:-1.2px;max-width:620px;margin:10px 0}.hero p{color:#bdcbe0;max-width:590px;line-height:1.6;font-size:14px;margin:0 0 18px}.primary{background:var(--green);color:#092017;border:0;padding:12px 16px;border-radius:12px;font-weight:800}.secondary{background:#ffffff0b;color:var(--text);border:1px solid var(--line);padding:11px 14px;border-radius:12px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.stat,.panel,.tile{background:linear-gradient(160deg,#121e32,#10192a);border:1px solid var(--line);border-radius:var(--radius);padding:17px}.stat .label{color:var(--muted);font-size:12px}.stat .value{font-size:clamp(18px,3vw,26px);font-weight:850;letter-spacing:-.7px;margin:9px 0 4px;overflow-wrap:anywhere}.stat small{font-size:11px;color:var(--muted)}.positive{color:var(--green)}.negative{color:var(--red)}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:26px 0 12px}.section-head h2{font-size:18px;margin:0;letter-spacing:-.4px}.section-head p{color:var(--muted);font-size:12px;margin:4px 0 0}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.tile{min-height:120px;text-align:left;color:var(--text);transition:transform .15s,border-color .15s}.tile:hover{transform:translateY(-2px);border-color:#45e0a155}.tile .emoji{font-size:24px}.tile strong{display:block;margin:12px 0 4px}.tile span:last-child{font-size:11px;color:var(--muted)}.page{display:none}.page.active{display:block}.nav{position:fixed;z-index:10;bottom:0;left:0;right:0;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#0b1220ed;backdrop-filter:blur(18px);border-top:1px solid var(--line);display:flex;justify-content:center;gap:4px}.nav button{max-width:150px;flex:1;min-width:0;border:0;background:transparent;color:var(--muted);padding:9px 3px;border-radius:13px;font-size:10px;font-weight:750}.nav button .nav-icon{display:block;font-size:19px;margin-bottom:4px}.nav button.active{color:var(--green);background:#45e0a112}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:11px}.field label{font-size:12px;color:var(--muted)}.field input,.field select,.search{width:100%;background:#0a1322;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);outline:none}.field input:focus,.field select:focus,.search:focus{border-color:#45e0a1a0}.full{grid-column:1/-1}.transactions{display:flex;flex-direction:column;gap:9px}.transaction{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:13px;background:#ffffff05;border:1px solid var(--line)}.transaction .desc{font-weight:750;font-size:13px}.transaction .meta{color:var(--muted);font-size:11px;margin-top:4px}.transaction .amount{font-weight:850;white-space:nowrap}.del{border:0;background:#ff718818;color:var(--red);border-radius:8px;padding:6px 9px;margin-left:7px}.bar{height:9px;background:#ffffff0b;border-radius:99px;overflow:hidden;margin:10px 0}.bar span{height:100%;display:block;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:99px}.notice{padding:12px 14px;border-radius:13px;background:#ffc86b12;border:1px solid #ffc86b2b;color:#f5d9a4;font-size:12px;line-height:1.5}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.news-card{background:linear-gradient(145deg,#17263e,#111b2e);border:1px solid var(--line);border-radius:18px;padding:17px}.news-card .tag{display:inline-block;font-size:10px;color:var(--green);background:#45e0a112;border-radius:99px;padding:6px 9px;font-weight:800}.news-card h3{font-size:17px;line-height:1.3;margin:12px 0 8px}.news-card p{font-size:12px;line-height:1.6;color:var(--muted)}a{color:var(--blue);text-decoration:none;font-size:12px;font-weight:800}.inspire{font-size:clamp(23px,4vw,34px);line-height:1.35;letter-spacing:-.7px;font-weight:800;margin:20px 0}.quote-by{color:var(--muted);font-size:12px}.quote-box{padding:24px;border-radius:22px;background:linear-gradient(140deg,#203b50,#24264c);border:1px solid var(--line)}.quote-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.empty{color:var(--muted);font-size:12px;padding:16px;text-align:center}.footer{text-align:center;color:#70809b;font-size:10px;padding:28px 0 8px;line-height:1.6}.pill{font-size:10px;border:1px solid var(--line);padding:5px 8px;border-radius:99px;color:var(--muted)}.privacy{font-size:11px;line-height:1.6;color:var(--muted)}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.settings-row:last-child{border:0}.settings-row strong{font-size:13px}.settings-row p{font-size:11px;color:var(--muted);margin:4px 0 0}
+@media(max-width:650px){.app{padding:14px 12px 100px}.stats{gap:8px}.stat{padding:12px}.quick-grid{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero{padding:20px}.top{align-items:flex-start}.brand h1{font-size:17px}.select{max-width:100px;padding:9px 5px}.nav button{font-size:9px}.form-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo">N</div><div><h1>Nova Hub</h1><p id="brandSub">Your money. Your world. Your growth.</p></div></div>
+  <div class="top-actions"><select id="language" class="select" aria-label="Language"><option value="en">English</option><option value="am">አማርኛ</option><option value="om">Afaan Oromoo</option></select><button class="icon-btn" onclick="showPage('settings')" aria-label="Settings">⚙</button></div>
+</header>
+
+<main>
+<section class="page active" id="page-home">
+  <div class="hero"><div class="eyebrow" id="heroEyebrow">YOUR PERSONAL DASHBOARD</div><h2 id="heroTitle">Make every day<br>count.</h2><p id="heroText">Track your finances, follow the stories that matter, and keep your goals in focus — all in one place.</p><button class="primary" onclick="showPage('finance')" id="heroBtn">＋ Add transaction</button></div>
+  <div class="stats">
+    <div class="stat"><div class="label" data-i="balance">Total balance</div><div class="value" id="balance">$0.00</div><small data-i="balanceHint">Income minus expenses</small></div>
+    <div class="stat"><div class="label" data-i="income">Income</div><div class="value positive" id="income">$0.00</div><small data-i="thisMonth">This month</small></div>
+    <div class="stat"><div class="label" data-i="expenses">Expenses</div><div class="value negative" id="expenses">$0.00</div><small data-i="thisMonth2">This month</small></div>
+  </div>
+  <div class="section-head"><div><h2 id="quickTitle">Your spaces</h2><p id="quickSub">Everything you care about, one tap away.</p></div><span class="pill">4 TOOLS</span></div>
+  <div class="quick-grid">
+    <button class="tile" onclick="showPage('finance')"><span class="emoji">💳</span><strong data-i="finance">Finance tracker</strong><span data-i="financeSub">Income & expenses</span></button>
+    <button class="tile" onclick="showPage('news')"><span class="emoji">⚽</span><strong data-i="sports">Sports & Liverpool</strong><span data-i="sportsSub">Latest headlines</span></button>
+    <button class="tile" onclick="showPage('social')"><span class="emoji">🔔</span><strong data-i="social">Social updates</strong><span data-i="socialSub">Connect your sources</span></button>
+    <button class="tile" onclick="showPage('inspire')"><span class="emoji">✨</span><strong data-i="inspiration">Daily inspiration</strong><span data-i="inspireSub">Words to move you</span></button>
+  </div>
+  <div class="section-head"><div><h2 id="recentTitle">Recent activity</h2><p id="recentSub">Your latest money entries</p></div><button class="secondary" onclick="showPage('finance')" id="viewAll">View all →</button></div>
+  <div class="panel"><div id="homeTransactions" class="transactions"><div class="empty">Your transactions will appear here.</div></div></div>
+  <div class="footer">NOVA HUB · PERSONAL ORGANIZER<br>Your data stays on this device unless you choose to open an external service.</div>
+</section>
+
+<section class="page" id="page-finance">
+  <div class="section-head"><div><h2 data-i="finance">Finance tracker</h2><p id="financeSub">Record money in and money out.</p></div><span class="pill">LOCAL DATA</span></div>
+  <div class="stats">
+    <div class="stat"><div class="label" data-i="balance">Total balance</div><div class="value" id="balance2">$0.00</div></div>
+    <div class="stat"><div class="label" data-i="income">Income</div><div class="value positive" id="income2">$0.00</div></div>
+    <div class="stat"><div class="label" data-i="expenses">Expenses</div><div class="value negative" id="expenses2">$0.00</div></div>
+  </div>
+  <div class="layout">
+    <div class="panel"><div class="section-head" style="margin-top:0"><div><h2 id="addTitle">Add transaction</h2><p id="addSub">Save a deposit, salary, bill or purchase.</p></div></div>
+      <form id="txForm">
+        <div class="field"><label id="typeLabel">Transaction type</label><select id="txType"><option value="income">Income / money in</option><option value="expense">Expense / money out</option></select></div>
+        <div class="field"><label id="amountLabel">Amount</label><input id="txAmount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+        <div class="field"><label id="categoryLabel">Category</label><select id="txCategory"><option>Salary</option><option>Business</option><option>Transfer</option><option>Food</option><option>Transport</option><option>Bills</option><option>Shopping</option><option>Trading</option><option>Other</option></select></div>
+        <div class="field"><label id="accountLabel">Account / bank</label><input id="txAccount" placeholder="e.g. Cash, CBE, Telebirr"></div>
+        <div class="field"><label id="dateLabel">Date</label><input id="txDate" type="date" required></div>
+        <div class="field"><label id="noteLabel">Note (optional)</label><input id="txNote" placeholder="What was this for?"></div>
+        <button class="primary" type="submit" id="saveBtn">Save transaction</button>
+      </form>
+      <p class="privacy" id="bankNote">Bank note: this version does not connect to bank accounts automatically. Enter transactions manually or import a supported statement in a future version.</p>
+    </div>
+    <div class="panel"><div class="section-head" style="margin-top:0"><div><h2 id="spendingTitle">Money overview</h2><p id="spendingSub">Based on your saved entries.</p></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px"><span data-i="income">Income</span><strong id="overviewIncome">$0.00</strong></div><div class="bar"><span id="incomeBar" style="width:0"></span></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px"><span data-i="expenses">Expenses</span><strong id="overviewExpenses">$0.00</strong></div><div class="bar"><span id="expenseBar" style="width:0;background:linear-gradient(90deg,#ff7188,#ffc86b)"></span></div>
+      <div class="notice" id="financeNotice">Tip: use the same currency consistently. Totals use the currency label you choose below.</div>
+      <div class="field" style="margin-top:18px"><label id="currencyLabel">Display currency</label><select id="currency"><option value="USD">USD — US Dollar</option><option value="ETB">ETB — Ethiopian Birr</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — Pound Sterling</option><option value="KES">KES — Kenyan Shilling</option></select></div>
+      <button class="secondary" style="width:100%" onclick="exportCSV()" id="exportBtn">Export transactions (CSV)</button>
+    </div>
+  </div>
+  <div class="section-head"><div><h2 id="historyTitle">Transaction history</h2><p id="historySub">Stored on this device.</p></div><button class="secondary" onclick="clearTransactions()" id="clearBtn">Clear all</button></div>
+  <div class="panel"><input id="txSearch" class="search" placeholder="Search transactions..." style="margin-bottom:12px"><div id="transactions" class="transactions"></div></div>
+</section>
+
+<section class="page" id="page-news">
+  <div class="section-head"><div><h2 data-i="sports">Sports & Liverpool</h2><p id="newsSub">Find trusted sports headlines and club updates.</p></div><button class="secondary" onclick="openNews()" id="refreshNews">↗ Open latest news</button></div>
+  <div class="hero" style="background:linear-gradient(120deg,#641b2a,#241d34)"><div class="eyebrow">YOU'LL NEVER WALK ALONE</div><h2 id="liverpoolTitle">Liverpool FC</h2><p id="liverpoolDesc">Follow match reports, fixtures, transfers and club announcements from official and established sports publishers.</p><a href="https://www.liverpoolfc.com/news" target="_blank" rel="noopener">Official Liverpool FC news ↗</a></div>
+  <div class="cards" style="margin-top:14px">
+    <article class="news-card"><span class="tag">OFFICIAL</span><h3 id="officialTitle">Liverpool FC — Latest News</h3><p id="officialDesc">Club announcements, interviews, team news and match reports.</p><a href="https://www.liverpoolfc.com/news" target="_blank" rel="noopener">Read Liverpool FC ↗</a></article>
+    <article class="news-card"><span class="tag">SPORTS</span><h3>BBC Sport — Football</h3><p>Football headlines, match coverage and league updates.</p><a href="https://www.bbc.com/sport/football" target="_blank" rel="noopener">Open BBC Sport ↗</a></article>
+    <article class="news-card"><span class="tag">LIVE SCORES</span><h3>ESPN Football</h3><p>Scores, fixtures, tables and match coverage.</p><a href="https://www.espn.com/soccer/" target="_blank" rel="noopener">Open ESPN ↗</a></article>
+    <article class="news-card"><span class="tag">PREMIER LEAGUE</span><h3>Premier League</h3><p>Official competition news, standings and fixtures.</p><a href="https://www.premierleague.com/" target="_blank" rel="noopener">Open Premier League ↗</a></article>
+  </div>
+  <p class="privacy" id="newsNote" style="margin-top:14px">Live headlines are opened from the publishers' websites. This standalone page does not scrape their sites or guarantee live updates inside the app. Internet connection required.</p>
+</section>
+
+<section class="page" id="page-social">
+  <div class="section-head"><div><h2 data-i="social">Social updates</h2><p id="socialSub">Shortcuts to your apps and notification setup.</p></div><span class="pill">OPT-IN</span></div>
+  <div class="notice" id="socialNotice">Privacy matters: a normal web page cannot read private messages from Facebook, Telegram or WhatsApp. Android notification access requires a native app component and your explicit permission.</div>
+  <div class="cards" style="margin-top:14px">
+    <article class="news-card"><span class="tag">MESSAGING</span><h3>Telegram</h3><p id="telegramDesc">Open Telegram to see new messages. Private message reading is not available to this webpage.</p><a href="https://t.me/" target="_blank" rel="noopener">Open Telegram ↗</a></article>
+    <article class="news-card"><span class="tag">MESSAGING</span><h3>WhatsApp</h3><p id="whatsappDesc">Open WhatsApp or WhatsApp Web to check conversations.</p><a href="https://web.whatsapp.com/" target="_blank" rel="noopener">Open WhatsApp Web ↗</a></article>
+    <article class="news-card"><span class="tag">SOCIAL</span><h3>Facebook</h3><p id="facebookDesc">Visit Facebook notifications and messages.</p><a href="https://www.facebook.com/" target="_blank" rel="noopener">Open Facebook ↗</a></article>
+    <article class="news-card"><span class="tag">SHORT VIDEO</span><h3>TikTok</h3><p id="tiktokDesc">Open TikTok to check notifications and recent content.</p><a href="https://www.tiktok.com/" target="_blank" rel="noopener">Open TikTok ↗</a></article>
+  </div>
+  <div class="panel" style="margin-top:14px"><h3 id="notificationTitle">Enable phone notifications</h3><p class="privacy" id="notificationDesc">For notifications from other apps, Android requires a native Notification Listener service. This HTML page cannot grant that permission or read message content by itself.</p><button class="secondary" onclick="showNotificationHelp()" id="notificationBtn">Show setup guidance</button><div id="notificationHelp" class="notice" hidden style="margin-top:12px">On Android: Settings → Notifications → Notification history can show some recent notifications if enabled. To aggregate notifications inside Nova Hub, the Android APK must be extended with a native NotificationListenerService, then you must enable its access in Android Settings. Sensitive message contents should remain private and local.</div></div>
+</section>
+
+<section class="page" id="page-inspire">
+  <div class="section-head"><div><h2 data-i="inspiration">Daily inspiration</h2><p id="inspireSub">Search a thought, save a favorite, or find a fresh prompt.</p></div><span class="pill">DAILY RESET</span></div>
+  <div class="quote-box"><div class="eyebrow" id="quoteLabel">A THOUGHT TO CARRY</div><div class="inspire" id="quoteText">Small steps taken consistently create extraordinary change.</div><div class="quote-by" id="quoteBy">— Daily reminder</div><div class="quote-actions"><button class="primary" onclick="newQuote()" id="newQuoteBtn">✦ New inspiration</button><button class="secondary" onclick="saveQuote()" id="saveQuoteBtn">♡ Save quote</button></div></div>
+  <div class="section-head"><div><h2 id="searchQuoteTitle">Search inspiration</h2><p id="searchQuoteSub">Search by topic or keyword.</p></div></div>
+  <input id="quoteSearch" class="search" placeholder="Try: discipline, focus, trading, courage..." oninput="searchQuotes()">
+  <div id="quoteResults" class="cards" style="margin-top:12px"></div>
+  <div class="section-head"><div><h2 id="favoritesTitle">Saved favorites</h2><p id="favoritesSub">Your selected reminders stay on this device.</p></div></div><div class="panel"><div id="favorites" class="transactions"><div class="empty">No saved quotes yet.</div></div></div>
+</section>
+
+<section class="page" id="page-settings">
+  <div class="section-head"><div><h2 id="settingsTitle">Settings & privacy</h2><p id="settingsSub">Manage your preferences and data.</p></div></div>
+  <div class="panel">
+    <div class="settings-row"><div><strong id="languageSetting">App language</strong><p>English · አማርኛ · Afaan Oromoo</p></div><select class="select" onchange="setLanguage(this.value)" id="language2"><option value="en">English</option><option value="am">አማርኛ</option><option value="om">Afaan Oromoo</option></select></div>
+    <div class="settings-row"><div><strong id="dataTitle">Your local data</strong><p id="dataDesc">Transactions and favorites are stored in this browser's local storage.</p></div><span class="pill">ON DEVICE</span></div>
+    <div class="settings-row"><div><strong id="backupTitle">Export backup</strong><p id="backupDesc">Download your transactions as CSV.</p></div><button class="secondary" onclick="exportCSV()" id="backupBtn">Export</button></div>
+    <div class="settings-row"><div><strong id="permissionTitle">Permissions</strong><p id="permissionDesc">This web app cannot grant Android permissions or read private social messages.</p></div><span class="pill">MANUAL</span></div>
+    <div class="settings-row"><div><strong id="resetTitle">Reset app data</strong><p id="resetDesc">Permanently remove transactions and saved quotes from this device.</p></div><button class="del" onclick="resetAll()" id="resetBtn">Reset</button></div>
+  </div>
+  <p class="privacy" id="privacyNote" style="margin-top:14px">Security note: do not store bank passwords, card PINs or one-time codes in this app. Automatic bank integration requires a supported provider and secure authorization. Automatic social-message tracking requires native Android development and explicit user consent.</p>
+</section>
+</main>
+</div>
+<nav class="nav" aria-label="Main navigation">
+<button class="active" data-page="home" onclick="showPage('home')"><span class="nav-icon">⌂</span><span data-i="home">Home</span></button>
+<button data-page="finance" onclick="showPage('finance')"><span class="nav-icon">▤</span><span data-i="finance">Finance</span></button>
+<button data-page="news" onclick="showPage('news')"><span class="nav-icon">⚽</span><span data-i="sports">Sports</span></button>
+<button data-page="social" onclick="showPage('social')"><span class="nav-icon">◉</span><span data-i="social">Social</span></button>
+<button data-page="inspire" onclick="showPage('inspire')"><span class="nav-icon">✦</span><span data-i="inspiration">Inspire</span></button>
+</nav>
+<script>
+const $=id=>document.getElementById(id);
+const today=new Date().toISOString().slice(0,10);
+$('txDate').value=today;
+let transactions=read('nova_transactions',[]);
+let favorites=read('nova_favorites',[]);
+let currency=read('nova_currency','USD');
+$('currency').value=currency;
+function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch(e){return fallback}}
+function write(key,value){localStorage.setItem(key,JSON.stringify(value))}
+function money(n){try{return new Intl.NumberFormat(undefined,{style:'currency',currency:currency,maximumFractionDigits:2}).format(n)}catch(e){return currency+' '+Number(n).toFixed(2)}}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='inspire')renderQuotes()}
+function monthTotals(){const m=new Date().toISOString().slice(0,7);let income=0,expenses=0;transactions.filter(t=>t.date.startsWith(m)).forEach(t=>t.type==='income'?income+=t.amount:expenses+=t.amount);return{income,expenses,balance:income-expenses}}
+function renderTransactions(target,items){const el=$(target);el.replaceChildren();if(!items.length){el.innerHTML='<div class="empty">No transactions found.</div>';return}items.forEach(t=>{const row=document.createElement('div');row.className='transaction';const left=document.createElement('div');const desc=document.createElement('div');desc.className='desc';desc.textContent=t.category+(t.note?' · '+t.note:'');const meta=document.createElement('div');meta.className='meta';meta.textContent=t.date+' · '+t.account+' · '+t.pair;left.append(desc,meta);const right=document.createElement('div');right.style.textAlign='right';const amount=document.createElement('span');amount.className='amount '+(t.type==='income'?'positive':'negative');amount.textContent=(t.type==='income'?'+':'−')+money(t.amount);right.append(amount);const del=document.createElement('button');del.className='del';del.textContent='×';del.title='Delete transaction';del.onclick=()=>{transactions=transactions.filter(x=>x.id!==t.id);write('nova_transactions',transactions);renderFinance()};right.append(del);row.append(left,right);el.append(row)})}
+function renderFinance(){const totals=monthTotals();['balance','balance2'].forEach(id=>$(id).textContent=money(totals.balance));['income','income2','overviewIncome'].forEach(id=>$(id).textContent=money(totals.income));['expenses','expenses2','overviewExpenses'].forEach(id=>$(id).textContent=money(totals.expenses));const max=Math.max(totals.income,totals.expenses,1);$('incomeBar').style.width=(totals.income/max*100)+'%';$('expenseBar').style.width=(totals.expenses/max*100)+'%';renderTransactions('transactions',transactions.filter(t=>(t.category+' '+t.note+' '+t.account+' '+t.pair).toLowerCase().includes($('txSearch').value.toLowerCase())).sort((a,b)=>b.date.localeCompare(a.date)));renderTransactions('homeTransactions',transactions.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4))}
+$('txForm').addEventListener('submit',e=>{e.preventDefault();const amount=Number($('txAmount').value);if(!Number.isFinite(amount)||amount<=0)return alert('Enter an amount greater than zero.');transactions.unshift({id:Date.now().toString(),type:$('txType').value,amount,category:$('txCategory').value,account:$('txAccount').value.trim()||'Not specified',date:$('txDate').value,note:$('txNote').value.trim(),pair:'—'});write('nova_transactions',transactions);$('txForm').reset();$('txDate').value=today;renderFinance();alert('Transaction saved on this device.')});
+$('txSearch').addEventListener('input',renderFinance);
+$('currency').addEventListener('change',()=>{currency=$('currency').value;write('nova_currency',currency);renderFinance()});
+function exportCSV(){const rows=[['Date','Type','Amount','Currency','Category','Account','Note'],...transactions.map(t=>[t.date,t.type,t.amount,currency,t.category,t.account,t.note])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='nova-transactions.csv';a.click();URL.revokeObjectURL(a.href)}
+function clearTransactions(){if(confirm('Delete all transactions? This cannot be undone.')){transactions=[];write('nova_transactions',transactions);renderFinance()}}
+function resetAll(){if(confirm('Delete all transactions and saved quotes from this device?')){transactions=[];favorites=[];write('nova_transactions',transactions);write('nova_favorites',favorites);renderFinance();renderQuotes();alert('Local app data cleared.')}}
+function openNews(){window.open('https://www.liverpoolfc.com/news','_blank','noopener')}
+const quotes=[
+{en:'Small steps taken consistently create extraordinary change.',am:'በተከታታይ የሚወሰዱ ትንንሽ እርምጃዎች ትልቅ ለውጥ ያመጣሉ።',om:'Tarkaanfiin xixiqqaan itti fufiinsaan fudhatamu jijjiirama guddaa fida.',tag:'discipline'},
+{en:'Protect your capital first; opportunity comes again.',am:'መጀመሪያ ካፒታልህን ጠብቅ፤ እድል እንደገና ይመጣል።',om:'Jalqaba kaappitaala kee eegi; carraan deebiʼee ni dhufa.',tag:'trading'},
+{en:'Consistency is more powerful than intensity.',am:'ተከታታይነት ከኃይለኛ ጥረት የበለጠ ኃይል አለው።',om:'Itti fufiinsi humna yeroo gabaabaa caalaa buʼa qabeessa.',tag:'discipline'},
+{en:'You do not need to be perfect; you need to keep learning.',am:'ፍጹም መሆን አያስፈልግም፤ መማርህን ቀጥል።',om:'Mudaa hin qabne taʼuun hin barbaachisu; barachuu kee itti fufi.',tag:'learning'},
+{en:'Focus on what you can control: preparation, patience, and action.',am:'መቆጣጠር በምትችለው ላይ አተኩር፦ ዝግጅት፣ ትዕግሥትና እርምጃ።',om:'Waan toʼachuu dandeessu irratti xiyyeeffadhu: qophii, obsaa fi gocha.',tag:'focus'},
+{en:'A plan turns a wish into a practical next step.',am:'ዕቅድ ምኞትን ወደ ተግባራዊ ቀጣይ እርምጃ ይቀይራል።',om:'Karoora jechuun hawwii gara tarkaanfii qabatamaatti jijjiiruu dha.',tag:'goals'},
+{en:'Rest is part of progress, not the opposite of it.',am:'እረፍት የእድገት ክፍል ነው፤ ተቃራኒው አይደለም።',om:'Boqonnaan qaama guddinaa ti; faallaa isaa miti.',tag:'balance'}
+];
+let quoteIndex=0;
+function currentQuoteText(q){const lang=localStorage.getItem('nova_language')||'en';return q[lang]||q.en}
+function newQuote(){quoteIndex=(quoteIndex+1+Math.floor(Math.random()*(quotes.length-1)))%quotes.length;renderCurrentQuote()}
+function renderCurrentQuote(){const q=quotes[quoteIndex];$('quoteText').textContent=currentQuoteText(q);$('quoteBy').textContent='— '+q.tag+' reminder'}
+function saveQuote(){const q=quotes[quoteIndex];if(!favorites.some(f=>f.en===q.en)){favorites.unshift(q);write('nova_favorites',favorites);renderQuotes();alert('Saved to favorites.')}}
+function renderQuotes(){renderCurrentQuote();const q=$('quoteSearch').value.toLowerCase();const list=quotes.filter(x=>(x.en+' '+x.am+' '+x.om+' '+x.tag).toLowerCase().includes(q));const el=$('quoteResults');el.replaceChildren();list.forEach(x=>{const c=document.createElement('article');c.className='news-card';const p=document.createElement('p');p.textContent=currentQuoteText(x);const b=document.createElement('button');b.className='secondary';b.textContent='♡ Save';b.onclick=()=>{if(!favorites.some(f=>f.en===x.en))favorites.unshift(x);write('nova_favorites',favorites);renderQuotes()};c.append(p,b);el.append(c)});const fav=$('favorites');fav.replaceChildren();if(!favorites.length){fav.innerHTML='<div class="empty">No saved quotes yet.</div>';return}favorites.forEach((x,i)=>{const row=document.createElement('div');row.className='transaction';const txt=document.createElement('span');txt.textContent=currentQuoteText(x);const b=document.createElement('button');b.className='del';b.textContent='×';b.onclick=()=>{favorites.splice(i,1);write('nova_favorites',favorites);renderQuotes()};row.append(txt,b);fav.append(row)})}
+function searchQuotes(){renderQuotes()}
+function showNotificationHelp(){$('notificationHelp').hidden=!$('notificationHelp').hidden}
+const dict={
+en:{balance:'Total balance',balanceHint:'Income minus expenses',income:'Income',expenses:'Expenses',thisMonth:'This month',thisMonth2:'This month',finance:'Finance tracker',financeSub:'Income & expenses',sports:'Sports & Liverpool',sportsSub:'Latest headlines',social:'Social updates',socialSub:'Connect your sources',inspiration:'Daily inspiration',inspireSub:'Words to move you',home:'Home'},
+am:{balance:'ጠቅላላ ቀሪ ሂሳብ',balanceHint:'ገቢ ሲቀነስ ወጪ',income:'ገቢ',expenses:'ወጪ',thisMonth:'በዚህ ወር',thisMonth2:'በዚህ ወር',finance:'የገንዘብ ክትትል',financeSub:'ገቢና ወጪ',sports:'ስፖርትና ሊቨርፑል',sportsSub:'የቅርብ ዜናዎች',social:'ማህበራዊ ዝመናዎች',socialSub:'ምንጮችዎን ይክፈቱ',inspiration:'የዕለት ተነሳሽነት',inspireSub:'የሚያበረታቱ ቃላት',home:'መነሻ'},
+om:{balance:'Idaʼama waliigalaa',balanceHint:'Galii hirʼina baasii',income:'Galii',expenses:'Baasii',thisMonth:'Jiʼa kana',thisMonth2:'Jiʼa kana',finance:'Hordoffii maallaqaa',financeSub:'Galii fi baasii',sports:'Ispoortii fi Liverpool',sportsSub:'Oduu haaraa',social:'Oduu miidiyaa hawaasaa',socialSub:'Maddoota bani',inspiration:'Kakaʼumsa guyyaa',inspireSub:'Jechoota nama kakaasan',home:'Mana'}
+};
+function setLanguage(lang){localStorage.setItem('nova_language',lang);$('language').value=lang;$('language2').value=lang;document.documentElement.lang=lang==='am'?'am':lang==='om'?'om':'en';document.querySelectorAll('[data-i]').forEach(el=>{const key=el.dataset.i;if(dict[lang]&&dict[lang][key])el.textContent=dict[lang][key]});const copy={
+en:{brandSub:'Your money. Your world. Your growth.',heroEyebrow:'YOUR PERSONAL DASHBOARD',heroTitle:'Make every day<br>count.',heroText:'Track your finances, follow the stories that matter, and keep your goals in focus — all in one place.',heroBtn:'＋ Add transaction',quickTitle:'Your spaces',quickSub:'Everything you care about, one tap away.',recentTitle:'Recent activity',recentSub:'Your latest money entries',viewAll:'View all →',financeSub:'Record money in and money out.',newsSub:'Find trusted sports headlines and club updates.',socialSub:'Shortcuts to your apps and notification setup.',inspireSub:'Search a thought, save a favorite, or find a fresh prompt.'},
+am:{brandSub:'ገንዘብዎ። ዓለምዎ። እድገትዎ።',heroEyebrow:'የግል ዳሽቦርድዎ',heroTitle:'እያንዳንዱን ቀን<br>በጥሩ ይጠቀሙ።',heroText:'ገንዘብዎን ይከታተሉ፣ አስፈላጊ ዜናዎችን ይከታተሉ፣ ግቦችዎንም በአንድ ቦታ ያደራጁ።',heroBtn:'＋ ግብይት ጨምር',quickTitle:'ክፍሎችዎ',quickSub:'የሚያስፈልግዎ ሁሉ በአንድ ንክኪ።',recentTitle:'የቅርብ እንቅስቃሴ',recentSub:'የቅርብ የገንዘብ መዝገቦች',viewAll:'ሁሉን እይ →',financeSub:'ገቢና ወጪ ይመዝግቡ።',newsSub:'የስፖርት ዜናዎችን ያግኙ።',socialSub:'ማህበራዊ መተግበሪያዎችና ማሳወቂያዎች።',inspireSub:'ሀሳብ ይፈልጉ፣ ይወዳጁ፣ ያበረታቱ።'},
+om:{brandSub:'Maallaqa kee. Addunyaa kee. Guddina kee.',heroEyebrow:'FUULA KEE',heroTitle:'Guyyaa hunda<br>buʼa qabeessa godhi.',heroText:'Maallaqa kee hordofi, oduu barbaachisaa ilaali, galma kees bakka tokkootti qindeessi.',heroBtn:'＋ Galmee dabal',quickTitle:'Kutaa kee',quickSub:'Wanti si barbaachisu cuqaasuu tokko qofaan.',recentTitle:'Sochii dhiheenyaa',recentSub:'Galmee maallaqaa haaraa',viewAll:'Hunda ilaali →',financeSub:'Galii fi baasii galmeessi.',newsSub:'Oduu ispoortii amanamaa argadhu.',socialSub:'App fi beeksisa kee bani.',inspireSub:'Yaada barbaadi, jaallatamaa olkaaʼi.'}
+};const c=copy[lang]||copy.en;Object.keys(c).forEach(id=>{if($(id))$(id).innerHTML=c[id]});renderFinance();renderQuotes()}
+$('language').addEventListener('change',e=>setLanguage(e.target.value));
+setLanguage(localStorage.getItem('nova_language')||'en');
+</script>
+</body>
+</html>
